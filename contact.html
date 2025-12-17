@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCREATIVES | Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- START OF RE-USED CSS from index.html (Required for styling) --- */
+        :root { 
+            --color-black: #000000; 
+            --color-dark-bg: #0a0a0a; 
+            --color-electric-blue: #2D9CDB; /* Main Accent */
+            --color-soft-grey: #F5F5F7; 
+            --color-text-light: #ffffff; 
+            --color-text-muted: #aaaaaa; 
+            --color-card-bg: #161616; /* New: Slightly lighter than background */
+            --font-main: 'Montserrat', sans-serif; 
+            --section-padding: 80px 20px; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); background-color: var(--color-dark-bg); color: var(--color-text-light); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; color: var(--color-text-light); transition: color 0.3s ease; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .blue-text { color: var(--color-electric-blue); }
+        .btn { display: inline-block; padding: 14px 35px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; border-radius: 6px; transition: all 0.3s ease; cursor: pointer; }
+        .btn-primary { background-color: var(--color-electric-blue); color: var(--color-black); border: 2px solid var(--color-electric-blue); }
+        .btn-primary:hover { background-color: #55b7f0; border-color: #55b7f0; }
+        header { background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #1a1a1a; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; }
+        .logo span { color: var(--color-electric-blue); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--color-electric-blue); }
+        .page-hero { padding: 180px 0 80px 0; background-color: var(--color-black); text-align: center; }
+        .page-hero h1 { font-size: 3.5rem; }
+        .page-hero p { color: var(--color-electric-blue); font-size: 1.1rem; }
+        .backend-info { background-color: #1a1a1a; padding: 20px; margin-top: 20px; border-radius: 4px; border-left: 4px solid var(--color-electric-blue); }
+        footer { background-color: #050505; padding: 80px 0 20px 0; color: var(--color-text-muted); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #1a1a1a; font-size: 0.9rem; }
+        
+        /* --- CONTACT STYLES --- */
+        .contact-section { 
+            padding: var(--section-padding); 
+            display: grid; 
+            grid-template-columns: 1.2fr 2fr; 
+            gap: 60px; 
+            align-items: flex-start;
+        }
+
+        /* Contact Info Cards */
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: var(--color-card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-electric-blue);
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--color-electric-blue);
+        }
+
+        .info-card p, .info-card a {
+            color: var(--color-soft-grey);
+            font-weight: 400;
+        }
+        
+        /* Contact Form Styles */
+        .contact-form-container {
+            background-color: var(--color-card-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-form-container > p {
+            color: var(--color-text-muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-form form { 
+            display: grid; 
+            gap: 20px; 
+        }
+        
+        .input-group {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .contact-form label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: 600; 
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-soft-grey);
+        }
+
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form select, 
+        .contact-form textarea { 
+            width: 100%; 
+            padding: 15px; 
+            border: 1px solid #333; 
+            background-color: #0a0a0a; 
+            color: var(--color-text-light); 
+            border-radius: 4px; 
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus, 
+        .contact-form select:focus, 
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-electric-blue);
+        }
+        
+        .contact-form textarea { resize: vertical; min-height: 180px; }
+        .contact-form .btn-primary { width: 100%; text-align: center; margin-top: 10px; }
+
+        /* --- RESPONSIVENESS ADJUSTMENTS --- */
+        @media (max-width: 1024px) {
+            .contact-section { 
+                grid-template-columns: 1fr; 
+                gap: 40px;
+            }
+            .contact-info-cards {
+                order: 2;
+            }
+            .contact-form-container {
+                order: 1;
+            }
+            .input-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-hero { padding: 150px 0 50px 0; }
+            .page-hero h1 { font-size: 2.5rem; }
+            .contact-form-container { padding: 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+        /* --- END OF CUSTOM CSS --- */
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">JCREATIVES<span>.</span></a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">The Studio Hub</a></li>
+                    <li><a href="contact.html" style="color:var(--color-electric-blue);">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Book a Shoot</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Ready to Build Your Visual Future?</h1>
+                <p>Let's collaborate on high-impact photography, digital design, and integrated solutions.</p>
+            </div>
+        </section>
+
+        <section class="contact-section container">
+            
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <p>Describe your project briefly, and a senior creative strategist will be in touch shortly.</p>
+                
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xdkqrgwv" method="POST">
+                        <div class="input-group">
+                            <div>
+                                <label for="name">Your Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label for="email">Your Best Email</label>
+                                <input type="email" id="email" name="_replyto" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <label for="service">Target Service</label>
+                        <select id="service" name="service" required>
+                            <option value="">— Select a primary service area —</option>
+                            <option value="photography">Photography </option>
+                             <option value="photography">Photography / Videography </option>
+                             <option value="livestreaming"> Livestreaming</option>
+                              <option value="livestreaming"> Livestreaming / Videography </option>
+                               <option value="Videography"> Videography </option>
+                            <option value="branding">Branding & Visual Identity</option>
+                            <option value="web">Web Design & Development</option>
+                            <option value="tech">Tech / Educational Inquiry</option>
+                            <option value="other">General Inquiry</option>
+                        </select>
+
+                        <label for="details">Project Details / Message</label>
+                        <textarea id="details" name="details" placeholder="Tell us about your project goals, timelines, and budget..." required></textarea>
+                        
+                        <button type="submit" class="btn btn-primary">Submit Project Inquiry</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-info-cards">
+                <h2>Quick Contact Options</h2>
+                <p class="blue-text">Need an immediate response? Use the contacts below.</p>
+                
+                <div class="info-card">
+                    <h3>✉️ Professional Email</h3>
+                    <p>For detailed proposals and formal communications.</p>
+                    <p><a href="mailto:hello@jcreatives.com">hello@jcreatives.com</a></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📱 Urgent Chat Line</h3>
+                    <p>For quick questions or project kick-offs.</p>
+                    <p><a href="tel:0000000000">Call: +234 XXX XXXX</a> (Available M-F, 9am-5pm)</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🌐 Connect Socially</h3>
+                    <p>Follow our latest work and behind-the-scenes content.</p>
+                    <p><a href="#">Instagram | LinkedIn</a></p>
+                </div>
+
+                <div class="backend-info">
+                    <h4>Deployment Note:</h4>
+                    <p>This form uses an external service (Formspree) to collect data and forward it to your email, avoiding the need for a custom server.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>JCREATIVES<span>.</span></h3>
+                    <p>Capturing moments. Designing impact. A modern creative brand built for the digital world.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#photo">Photography</a></li>
+                        <li><a href="services.html#brand">Branding</a></li>
+                        <li><a href="services.html#web">Web Design</a></li>
+                        <li><a href="services.html#tech">Tech Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hello@jcreatives.com">hello@jcreatives.com</a></li>
+                        <li><a href="tel:0000000000">Call Us</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JCREATIVES. Built to inspire.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

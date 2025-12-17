@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCREATIVES | Capturing Life, Crafting Visuals</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-black: #000000;
+            --color-dark-bg: #0a0a0a;
+            --color-electric-blue: #2D9CDB;
+            --color-soft-grey: #F5F5F7;
+            --color-text-light: #ffffff;
+            --color-text-muted: #aaaaaa;
+            --font-main: 'Montserrat', sans-serif;
+            --section-padding: 100px 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text-light);
+            line-height: 1.6;
+            background:
+                radial-gradient(circle at top right, rgba(45,156,219,0.15), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(255,255,255,0.04), transparent 40%),
+                var(--color-dark-bg);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--color-electric-blue);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #55b7f0;
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--color-electric-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-electric-blue);
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
+                url('images/IMG_3562.jpg');
+            background-size: cover;
+            background-position: center top;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(45,156,219,0.15), transparent 60%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 6vw, 4.8rem);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--color-soft-grey);
+            font-size: 1.15rem;
+        }
+
+        /* INTRO */
+        .intro {
+            padding: var(--section-padding);
+            background: linear-gradient(to bottom, #000, #0a0a0a);
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.6rem;
+        }
+
+        .intro h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--color-electric-blue);
+            margin: 20px auto;
+        }
+
+        .intro p {
+            max-width: 800px;
+            margin: auto;
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: var(--section-padding);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header p {
+            color: var(--color-electric-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .main-photo-focus {
+            grid-column: 1 / -1;
+            background:
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.85)),
+                url('images/IMG_3562.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+        }
+
+        .main-photo-focus h3 {
+            font-size: 2.5rem;
+        }
+
+        .main-photo-focus p {
+            max-width: 600px;
+            color: var(--color-soft-grey);
+        }
+
+        .service-card.secondary {
+            background: linear-gradient(145deg, #121212, #0c0c0c);
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .service-card.secondary:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(45,156,219,0.3);
+        }
+
+        .service-card.secondary h3 {
+            margin-bottom: 15px;
+        }
+
+        .service-card.secondary p,
+        .service-card.secondary li {
+            color: var(--color-text-muted);
+        }
+
+        /* CTA */
+        .mission-cta {
+            padding: 140px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+                url('images/IMG_3562.jpg');
+            background-size: cover;
+            background-position: center top;
+            text-align: center;
+        }
+
+        .mission-cta h2 {
+            font-size: 3rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .mission-cta h2::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 3px;
+            background: var(--color-electric-blue);
+            margin: 30px auto;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(to top, #050505, #000);
+            padding: 80px 20px 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .services-grid { grid-template-columns: 1fr; }
+            .main-photo-focus h3 { font-size: 1.8rem; }
+            .mission-cta h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav-container">
+        <div class="logo">JCREATIVES<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Book a Shoot</a>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <!-- Camera Watermark -->
+<div class="camera-watermark">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M20 16l4-6h16l4 6h6c3.3 0 6 2.7 6 6v24c0 3.3-2.7 6-6 6H14c-3.3 0-6-2.7-6-6V22c0-3.3 2.7-6 6-6h6zm12 30c6.6 0 12-5.4 12-12s-5.4-12-12-12-12 5.4-12 12 5.4 12 12 12zm0-6a6 6 0 100-12 6 6 0 000 12z"/>
+    </svg>
+</div>
+
+        <div class="container hero-content">
+            <h1>Capturing Life.<br>Crafting Visuals.</h1>
+            <p>Photography-first creative studio delivering powerful visuals, design, and digital experiences.</p>
+            <a href="portfolio.html" class="btn btn-primary">View Work</a>
+            <a href="services.html" class="btn btn-outline">Explore Services</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <h2>Visual Storytelling at Our Core</h2>
+            <p>We build brands from strong imagery—blending photography, design, and technology into a unified creative experience.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <p>What We Create</p>
+                <h2>Visuals First. Everything Else Follows.</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="main-photo-focus">
+                    <h3>Photography & Media Production</h3>
+                    <p>Creative portraiture, events, branding shoots, and visual storytelling.</p>
+                </div>
+
+                <div class="service-card secondary">
+                    <h3>Branding & Design</h3>
+                    <p>Logos, brand systems, and social visuals.</p>
+                </div>
+
+                <div class="service-card secondary">
+                    <h3>Web Design & UI</h3>
+                    <p>Portfolio websites and modern interfaces.</p>
+                </div>
+
+                <div class="service-card secondary">
+                    <h3>Tech & Education</h3>
+                    <p>Learning resources for creatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-cta">
+        <div class="container">
+            <h2>Our mission is to help you tell your most authentic story.</h2>
+            <a href="contact.html" class="btn btn-primary">Let’s Create Together</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-bottom">
+        © 2026 JCREATIVES. Built to inspire.
+    </div>
+</footer>
+
+</body>
+</html>

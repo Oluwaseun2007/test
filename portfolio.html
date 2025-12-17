@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCREATIVES | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Re-use the full CSS block from index.html here to maintain styles */
+        /* --- START OF RE-USED CSS --- */
+        :root {
+            --color-black: #000000;
+            --color-dark-bg: #0a0a0a;
+            --color-electric-blue: #2D9CDB;
+            --color-soft-grey: #F5F5F7;
+            --color-text-light: #ffffff;
+            --color-text-muted: #aaaaaa;
+            --font-main: 'Montserrat', sans-serif;
+            --section-padding: 80px 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-dark-bg);
+            color: var(--color-text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-text-light);
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+        .blue-text { color: var(--color-electric-blue); }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--color-electric-blue);
+            color: var(--color-text-light);
+            border: 2px solid var(--color-electric-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--color-electric-blue);
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: var(--color-electric-blue); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover { color: var(--color-electric-blue); }
+
+        /* --- NEW PORTFOLIO STYLES --- */
+        .page-hero {
+            padding: 180px 0 80px 0;
+            background-color: var(--color-black);
+            text-align: center;
+        }
+        .page-hero h1 { font-size: 3.5rem; }
+        .page-hero p { color: var(--color-electric-blue); font-size: 1.1rem; }
+
+        .gallery {
+            padding: var(--section-padding);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            color: var(--color-text-light);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* --- Re-used CTA style --- */
+        .mission-cta {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1520822598683-304020381c26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            padding: 120px 20px;
+            text-align: center;
+        }
+        .mission-cta h2 { font-size: 3rem; margin-bottom: 30px; max-width: 800px; margin: 0 auto 30px auto;}
+
+        /* --- FOOTER STYLES (for responsiveness) --- */
+        footer {
+            background-color: #050505;
+            padding: 80px 0 20px 0;
+            color: var(--color-text-muted);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .footer-brand h3 { color: var(--color-text-light); font-size: 1.8rem; margin-bottom: 15px;}
+        .footer-brand span { color: var(--color-electric-blue); }
+        .footer-col h4 { color: var(--color-text-light); margin-bottom: 20px; font-size: 1.1rem;}
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-hero { padding: 150px 0 50px 0; }
+            .page-hero h1 { font-size: 2.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .mission-cta h2 { font-size: 2rem; }
+        }
+        /* --- END OF RE-USED CSS --- */
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">JCREATIVES<span>.</span></a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html" style="color:var(--color-electric-blue);">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">The Studio Hub</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Book a Shoot</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Visual Proof</h1>
+                <p>A curated selection of our best visual storytelling and creative solutions.</p>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="alert('Viewing Case Study: Dynamic Portrait Shoot. (Simulated)');">
+                        <img src="https://images.unsplash.com/photo-1517466549247-9753b844b204?q=80&w=1974&auto=format&fit=crop" alt="Portrait Shoot">
+                        <div class="gallery-caption">Creative Portraiture</div>
+                    </div>
+                    <div class="gallery-item" onclick="alert('Viewing Case Study: Organizational Website Redesign. (Simulated)');">
+                        <img src="https://images.unsplash.com/photo-1549692520-21950d210515?q=80&w=2070&auto=format&fit=crop" alt="Web Design Mockup">
+                        <div class="gallery-caption">Digital Experience (Web)</div>
+                    </div>
+                    <div class="gallery-item" onclick="alert('Viewing Case Study: Full Brand Identity Kit. (Simulated)');">
+                        <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66?q=80&w=2070&auto=format&fit=crop" alt="Branding Kit">
+                        <div class="gallery-caption">Visual Identity (Branding)</div>
+                    </div>
+                    <div class="gallery-item" onclick="alert('Viewing Case Study: Music Ministry Promo Visuals. (Simulated)');">
+                        <img src="https://images.unsplash.com/photo-1593021975760-b8e7343e74b3?q=80&w=1974&auto=format&fit=crop" alt="Event Photography">
+                        <div class="gallery-caption">Promo Visuals</div>
+                    </div>
+                    <div class="gallery-item" onclick="alert('Viewing Case Study: Responsive UI/UX Layout. (Simulated)');">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" alt="UI/UX Design">
+                        <div class="gallery-caption">UI/UX Design</div>
+                    </div>
+                    <div class="gallery-item" onclick="alert('Viewing Case Study: Redefiners Motivational Content. (Simulated)');">
+                        <img src="https://images.unsplash.com/photo-1520607162513-774f35e4d291?q=80&w=1974&auto=format&fit=crop" alt="Motivational Content">
+                        <div class="gallery-caption">Purpose-Driven Content</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-cta">
+            <div class="container">
+                <h2>"Our mission is to create visually compelling content that inspires, informs, and transforms."</h2>
+                <a href="contact.html" class="btn btn-primary">Let's Discuss Your Vision</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>JCREATIVES<span>.</span></h3>
+                    <p>Capturing moments. Designing impact. A modern creative brand built for the digital world.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#photo">Photography</a></li>
+                        <li><a href="services.html#brand">Branding</a></li>
+                        <li><a href="services.html#web">Web Design</a></li>
+                        <li><a href="services.html#tech">Tech Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hello@jcreatives.com">hello@jcreatives.com</a></li>
+                        <li><a href="tel:0000000000">Call Us</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JCREATIVES. Built to inspire.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
