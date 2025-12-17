@@ -1,0 +1,226 @@
+<!-- SERVICES SECTION -->
+<style>
+:root {
+    --blue: #2D9CDB;
+    --dark: #0a0a0a;
+    --card: #111;
+    --text-muted: #aaaaaa;
+    --radius: 16px;
+}
+
+/* SERVICES WRAPPER */
+.services {
+    padding: 100px 20px;
+    background:
+        radial-gradient(circle at top right, rgba(45,156,219,.15), transparent 40%),
+        var(--dark);
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* SECTION HEADER */
+.services-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.services-header h2 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin-bottom: 15px;
+}
+
+.services-header p {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+/* SERVICE CARD */
+.service-card {
+    background: linear-gradient(145deg, #141414, #0b0b0b);
+    border-radius: var(--radius);
+    padding: 50px;
+    margin-bottom: 45px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    border: 1px solid #1c1c1c;
+    transition: .35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 70px rgba(45,156,219,.18);
+}
+
+/* ICON */
+.service-icon {
+    font-size: 2.8rem;
+    background: rgba(45,156,219,.1);
+    color: var(--blue);
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* CONTENT */
+.service-content h3 {
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+}
+
+.service-content p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    max-width: 900px;
+}
+
+/* LIST */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 12px 30px;
+}
+
+.service-list li {
+    font-weight: 600;
+    position: relative;
+    padding-left: 18px;
+}
+
+.service-list li::before {
+    content: "✓";
+    color: var(--blue);
+    position: absolute;
+    left: 0;
+}
+
+/* INFO BOX */
+.service-info {
+    margin-top: 30px;
+    background: rgba(255,255,255,.03);
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 4px solid var(--blue);
+}
+
+.service-info h4 {
+    color: var(--blue);
+    font-size: .95rem;
+    margin-bottom: 6px;
+}
+
+.service-info p {
+    font-size: .9rem;
+    color: var(--text-muted);
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+    .service-card {
+        flex-direction: column;
+        padding: 35px 25px;
+    }
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<section class="services">
+    <div class="services-container">
+
+        <div class="services-header">
+            <h2>Our Creative Services</h2>
+            <p>Photography First. Everything Else Supports It.</p>
+        </div>
+
+        <!-- PHOTOGRAPHY -->
+        <div class="service-card" id="photography">
+            <div class="service-icon">📷</div>
+            <div class="service-content">
+                <h3>Photography & Videography</h3>
+                <p>
+                    The heart of JCREATIVES. We capture emotion, atmosphere,
+                    and stories through professional photography and cinematic visuals.
+                </p>
+                <ul class="service-list">
+                    <li>Creative Portraits & Headshots</li>
+                    <li>Event Photography & Coverage</li>
+                    <li>Brand & Promotional Shoots</li>
+                    <li>Music & Ministry Media</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- BRANDING -->
+        <div class="service-card" id="branding">
+            <div class="service-icon">🎨</div>
+            <div class="service-content">
+                <h3>Branding & Visual Design</h3>
+                <p>
+                    We transform powerful visuals into cohesive brand identities
+                    that communicate clearly and consistently.
+                </p>
+                <ul class="service-list">
+                    <li>Logo Design</li>
+                    <li>Brand Identity Systems</li>
+                    <li>Flyers & Posters</li>
+                    <li>Social Media Graphics</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- WEB -->
+        <div class="service-card" id="web">
+            <div class="service-icon">🌐</div>
+            <div class="service-content">
+                <h3>Web Design & Digital Presence</h3>
+                <p>
+                    Clean, responsive websites built to showcase visuals
+                    and deliver seamless user experiences.
+                </p>
+                <ul class="service-list">
+                    <li>Portfolio Websites</li>
+                    <li>Business & Organization Sites</li>
+                    <li>Responsive UI / UX</li>
+                    <li>Basic E-commerce</li>
+                </ul>
+
+                <div class="service-info">
+                    <h4>Technical Foundation</h4>
+                    <p>
+                        Projects may include backend integration using Node.js
+                        or Python (Flask / Django) for databases, authentication,
+                        and scalability.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TECH -->
+        <div class="service-card" id="tech">
+            <div class="service-icon">🧠</div>
+            <div class="service-content">
+                <h3>Tech & Learning Hub</h3>
+                <p>
+                    Empowering creatives and students with foundational technical
+                    skills for growth in the digital space.
+                </p>
+                <ul class="service-list">
+                    <li>HTML & Web Fundamentals</li>
+                    <li>Python Basics</li>
+                    <li>MATLAB Introduction</li>
+                    <li>Learning & Study Resources</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
